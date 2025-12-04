@@ -19,7 +19,17 @@ const displayLabelWord = (words) =>{
     words.forEach(word=>{
         const card = document.createElement('div')
         card.innerHTML = `
-        <p>c</p>
+        <div class="bg-white px-5 py-10 rounded-xl shadow-xl text-center space-y-5">
+            <h1 class="font-bold text-2xl">${word.word}</h1>
+            <p class="font-semibold">Meaning/Pronounciation</p>
+            <div class="font-bangla font-medium text-2xl">
+                ${word.meaning}/${word.pronunciation}
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-circle-info"></i></button>
+                <button class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+        </div>
         `
         wordContainer.appendChild(card)
     })
