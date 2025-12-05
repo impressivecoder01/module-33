@@ -47,7 +47,7 @@ const displayLabelWord = (words) =>{
                 ${word.meaning? word.meaning : 'meaning did not found'}/${word.pronunciation}
             </div>
             <div class="flex items-center justify-between">
-                <button class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-circle-info"></i></button>
+                <button onclick='my_modal_5.showModal()' class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-volume-high"></i></button>
             </div>
         </div>
