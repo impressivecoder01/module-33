@@ -15,7 +15,20 @@ const displayLabelWord = (words) =>{
     // console.log(words)
     const wordContainer = document.getElementById('word-container')
     wordContainer.innerHTML = '';
-
+    if(words.length <= 0){
+        wordContainer.innerHTML=''
+        const next = document.createElement('div')
+        wordContainer.innerHTML = `
+        <div class="col-span-full space-y-2 text-center">
+            <img class='mx-auto' src="./assets/alert-error.png" alt="error">
+            <p class="text-xs font-bangla text-[#79716b]">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h1 class="font-semibold text-3xl">নেক্সট Lesson এ যান</h1>
+        </div>
+        `
+        wordContainer.appendChild(next)
+        return;
+        
+    }
     words.forEach(word=>{
         const card = document.createElement('div')
         card.innerHTML = `
