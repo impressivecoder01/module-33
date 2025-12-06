@@ -9,6 +9,7 @@ const removeActive = () => {
 }
 const loadLevelWord = (id) =>{
     // console.log(id)
+    // manageSpinner(true)
     fetch(`https://openapi.programming-hero.com/api/level/${id}`)
     .then(res => res.json())
     .then(data => {
@@ -18,6 +19,17 @@ const loadLevelWord = (id) =>{
         clickedBtn.classList.add('active')
     })
 }
+// manage spinner
+// const manageSpinner = (sts) =>{
+//     if(sts === true){
+//         document.getElementById('spinner-id').classList.remove('hidden')
+//         document.getElementById('word-container').classList.add('hidden')
+//     }
+//     else{
+//          document.getElementById('word-container').classList.remove('hidden')
+//         document.getElementById('spinner-id').classList.remove('hidden')
+//     }
+// }
 
 const displayLabelWord = (words) =>{
     // console.log(words)
@@ -54,6 +66,7 @@ const displayLabelWord = (words) =>{
         `
         wordContainer.appendChild(card)
     })
+    // manageSpinner(false)
 }
 const loadWordDetails = async(id) => {
     const url = `https://openapi.programming-hero.com/api/word/${id}`
