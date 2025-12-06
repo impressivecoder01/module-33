@@ -62,10 +62,17 @@ const loadWordDetails = async(id) => {
     disPlayWordsDetails(detail)
 }
 const disPlayWordsDetails = (word) => {
+    console.log(word)
     const detailsBox = document.getElementById('details-container')
+    detailsBox.innerHTML = ''
     const newDiv= document.createElement('div')
     newDiv.innerHTML = `
-    <p>hello</p>
+    <div class="space-y-5">
+    <h1 class="text-xl font-bold">${word.data.word}<i class="fa-solid fa-microphone-lines"></i>${word.data.pronunciation}</h1>
+    <p class="font-bold">${word.data.meaning}</p>
+    <p class="font-bold">Example</p>
+    <p class="text-xs">${word.data.sentence} </p>
+</div>
     `
     detailsBox.appendChild(newDiv)
     document.getElementById('my_modal_5').showModal()
