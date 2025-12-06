@@ -47,7 +47,7 @@ const displayLabelWord = (words) =>{
                 ${word.meaning? word.meaning : 'meaning did not found'}/${word.pronunciation}
             </div>
             <div class="flex items-center justify-between">
-                <button onclick='my_modal_5.showModal()' class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-circle-info"></i></button>
+                <button onclick='loadWordDetails(${word.id})' class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="btn bg-[#1a91ff1a]"><i class="fa-solid fa-volume-high"></i></button>
             </div>
         </div>
@@ -55,7 +55,23 @@ const displayLabelWord = (words) =>{
         wordContainer.appendChild(card)
     })
 }
+const loadWordDetails = async(id) => {
+    const url = `https://openapi.programming-hero.com/api/word/${id}`
+    const res = await fetch(url)
+    const detail = await res.json()
+    disPlayWordsDetails(detail)
+}
+const disPlayWordsDetails = (word) => {
+    const detailsBox = document.getElementById('details-container')
+    const newDiv= document.createElement('div')
+    newDiv.innerHTML = `
+    <p>hello</p>
+    `
+    detailsBox.appendChild(newDiv)
+    document.getElementById('my_modal_5').showModal()
+    
 
+}
 const showData=(lessons)=>{
     // console.log(datas)
     const labelContainer = document.getElementById('label-container')
